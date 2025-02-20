@@ -1,9 +1,6 @@
 "use client"
-
-import { useState } from "react"
 import { motion } from "framer-motion"
 import { Users, Globe, Shield } from "lucide-react"
-import Image from "next/image"
 import { ErrorBoundary, type FallbackProps } from "react-error-boundary"
 import type React from "react" // Added import for React
 
@@ -70,8 +67,6 @@ function ErrorFallback({ error }: FallbackProps) {
 }
 
 export default function OtherWeb3Products() {
-  const [isImageLoaded, setIsImageLoaded] = useState(false)
-
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 pt-16">
       <main className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
@@ -90,29 +85,7 @@ export default function OtherWeb3Products() {
             </ErrorBoundary>
           ))}
         </div>
-        <div className="mt-16 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Discover the Future of Web3</h2>
-          <div className="relative inline-block w-full max-w-2xl">
-            <Image
-              src="/placeholder.svg"
-              alt="Web3 Future"
-              width={500}
-              height={300}
-              layout="responsive"
-              className={`rounded-lg shadow-xl transition-opacity duration-300 ${
-                isImageLoaded ? "opacity-100" : "opacity-0"
-              }`}
-              onLoad={() => setIsImageLoaded(true)}
-            />
-            {!isImageLoaded && (
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-lg">
-                <span className="text-gray-500 dark:text-gray-400">Loading...</span>
-              </div>
-            )}
-          </div>
-        </div>
       </main>
     </div>
   )
 }
-
