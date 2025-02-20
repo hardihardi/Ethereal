@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Send } from "lucide-react"
@@ -35,27 +37,30 @@ export default function NewsletterSubscription() {
           </p>
         </div>
         <div className="mt-8 max-w-md mx-auto">
-          <form onSubmit={handleSubmit} className="flex items-center">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full"
+          >
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="flex-grow px-4 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="flex-1 px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white w-full"
               required
             />
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               type="submit"
-              className="bg-indigo-600 text-white px-6 py-2 rounded-r-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              className="inline-flex items-center justify-center whitespace-nowrap px-6 py-3 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors duration-200 w-full sm:w-auto"
               disabled={status === "loading"}
             >
               {status === "loading" ? (
                 "Subscribing..."
               ) : (
                 <>
-                  Subscribe <Send className="inline-block ml-2 h-4 w-4" />
+                  Subscribe <Send className="ml-2 h-4 w-4" />
                 </>
               )}
             </motion.button>
@@ -71,4 +76,3 @@ export default function NewsletterSubscription() {
     </div>
   )
 }
-
