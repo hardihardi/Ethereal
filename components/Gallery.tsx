@@ -7,19 +7,19 @@ const projects = [
   {
     id: 1,
     title: "DeFi Dashboard",
-    image: "/project/defi-dashboard.png",
+    image: "https://cdn.qwenlm.ai/output/a26f005f-384b-4e36-a939-94b8319e5605/t2i/a0b543d2-698c-49a0-9c3a-2986183ec289/8503e468-92cb-45c0-b8d6-20fedc0850cc.png",
     description: "A comprehensive dashboard for managing DeFi investments",
   },
   {
     id: 2,
     title: "NFT Marketplace",
-    image: "/project/nft-marketplace.png",
+    image: "https://cdn.qwenlm.ai/output/a26f005f-384b-4e36-a939-94b8319e5605/t2i/ba73cf73-dc39-4d49-8b6a-a2d32974e365/fa84a295-e345-4987-8ac5-5f5c66585cf1.png",
     description: "A platform for buying, selling, and trading unique digital assets",
   },
   {
     id: 3,
     title: "Decentralized Social Network",
-    image: "/project/decentralized-social-network.png",
+    image: "https://cdn.qwenlm.ai/output/a26f005f-384b-4e36-a939-94b8319e5605/t2i/a2fd8e59-881e-4e30-8374-bebca6e42225/10d72d6c-c34f-4666-a976-c5f81a7c508c.png",
     description: "A Web3-powered social network with user-owned data",
   },
   // Add more projects as needed
@@ -59,4 +59,3 @@ export default function Gallery() {
     </section>
   )
 }
-
