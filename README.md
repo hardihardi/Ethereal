@@ -1,4 +1,4 @@
-# Etheral - Web3 Development Agency
+# Ethereal - Web3 Development Agency
 <img src="https://www.site-shot.com/cached_image/jU6U8O-zEe-rTwJCrBEABA" style="max-width: 1000; height: 1000;">
 Ethereal is a modern, responsive landing page for a Web3 development agency. Built with Next.js and React, it showcases various Web3 services and products, providing an engaging user experience for potential clients interested in blockchain technology, NFTs, DeFi, and more.
 
