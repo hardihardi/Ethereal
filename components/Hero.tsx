@@ -48,7 +48,7 @@ export default function Hero() {
         >
           <Link
             href="/services"
-            className="bg-white text-indigo-600 font-bold py-4 px-10 rounded-full text-lg shadow-lg hover:shadow-xl transition duration-300 hover:bg-gray-100 cursor-pointer z-10 relative inline-block"
+            className="bg-white text-indigo-600 font-bold py-3 sm:py-4 px-6 sm:px-10 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition duration-300 hover:bg-gray-100 active:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 cursor-pointer z-10 relative inline-block w-full sm:w-auto text-center"
           >
             Explore Services
           </Link>
