@@ -25,7 +25,7 @@ const products: Product[] = [
     price: 2999,
     rating: 4.8,
     reviews: 120,
-    image: "/marketplace/smart-contract-development.png",
+    image: "https://cdn.qwenlm.ai/output/a26f005f-384b-4e36-a939-94b8319e5605/t2i/79d6878f-149f-4ee3-9547-6ca29378e5fb/d56cf1d1-3536-4618-9b56-f02869e38029.png",
     category: "Development",
   },
   {
@@ -35,7 +35,7 @@ const products: Product[] = [
     price: 4999,
     rating: 4.9,
     reviews: 85,
-    image: "/marketplace/nft-collection-launch.png",
+    image: "https://cdn.qwenlm.ai/output/a26f005f-384b-4e36-a939-94b8319e5605/t2i/323b8893-f6dc-4828-adef-54249b1449bf/38afd9e9-ee6e-4b03-a0e4-60febd9a977d.png",
     category: "NFT",
   },
   {
@@ -45,7 +45,7 @@ const products: Product[] = [
     price: 9999,
     rating: 4.7,
     reviews: 62,
-    image: "/marketplace/defi-platform-development.png",
+    image: "https://cdn.qwenlm.ai/output/a26f005f-384b-4e36-a939-94b8319e5605/t2i/1f2cd68e-83f6-4137-9154-6d14b694b41a/15297e7f-b9b2-4ae6-ae8c-398c0c776c2e.png",
     category: "Development",
   },
   {
@@ -55,7 +55,7 @@ const products: Product[] = [
     price: 1999,
     rating: 4.9,
     reviews: 150,
-    image: "/marketplace/blockchain-consulting.png",
+    image: "https://cdn.qwenlm.ai/output/a26f005f-384b-4e36-a939-94b8319e5605/t2i/4ad390b1-ae17-4820-9cb6-6f5f4a53869b/e991478c-c37f-462f-a1f3-70016753dda3.png",
     category: "Consulting",
   },
   {
@@ -65,7 +65,7 @@ const products: Product[] = [
     price: 3999,
     rating: 4.8,
     reviews: 95,
-    image: "/marketplace/token-creation-service.png",
+    image: "https://cdn.qwenlm.ai/output/a26f005f-384b-4e36-a939-94b8319e5605/t2i/1c751f71-31c9-4f96-9a46-977ce49d5f69/38f93502-96f2-43ac-85b7-0126830578a5.png",
     category: "Development",
   },
   {
@@ -75,7 +75,7 @@ const products: Product[] = [
     price: 5999,
     rating: 4.6,
     reviews: 78,
-    image: "/marketplace/web3-integration.png",
+    image: "https://cdn.qwenlm.ai/output/a26f005f-384b-4e36-a939-94b8319e5605/t2i/07bab57c-f8e9-4672-9cdc-e751e84cdb74/241ccc58-b2ce-433c-ade4-7c7719612f41.png",
     category: "Development",
   },
 ]
@@ -262,4 +262,3 @@ export default function Marketplace() {
     </div>
   )
 }
-
