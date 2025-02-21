@@ -32,7 +32,7 @@ export default function Header() {
   ]
 
   return (
-    <nav className="fixed w-full bg-white dark:bg-gray-900 z-10 px-4 sm:px-6">
+    <nav className="fixed w-full bg-white dark:bg-gray-900 z-[100] px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="relative flex items-center justify-between h-16 md:h-20">
           <div className="flex-shrink-0 flex items-center">
@@ -66,7 +66,7 @@ export default function Header() {
               ))}
             </div>
           </div>
-          <div className="flex items-center space-x-2 sm:space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4 relative z-[101]">
             <Web3WalletButton />
             {mounted && (
               <motion.button
@@ -99,14 +99,22 @@ export default function Header() {
       </div>
 
       {isOpen && (
-        <div className="lg:hidden fixed inset-0 z-50">
-          <div className="fixed inset-0 bg-gray-800 bg-opacity-50 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
+        <div className="lg:hidden fixed inset-0 z-[150]">
+          <div
+            className="fixed inset-0 bg-gray-800 bg-opacity-50 backdrop-blur-sm z-[151]"
+            onClick={() => setIsOpen(false)}
+          />
           <motion.div
             initial={{ x: "100%", width: "100%" }}
-            animate={{ x: 0, width: "80%" }}
-            exit={{ x: "100%", width: "100%" }}
-            transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-            className="fixed inset-y-0 right-0 max-w-xs w-full bg-white dark:bg-gray-900 shadow-xl overflow-y-auto flex flex-col"
+            animate={{ x: 0, width: ["100%", "85%", "80%"] }}
+            exit={{ x: "100%" }}
+            transition={{
+              type: "spring",
+              bounce: 0,
+              duration: 0.4,
+              width: { duration: 0.4, ease: "easeOut" },
+            }}
+            className="fixed inset-y-0 right-0 max-w-[20rem] w-full bg-white dark:bg-gray-900 shadow-xl overflow-y-auto flex flex-col z-[152]"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             onDragEnd={(e, { offset, velocity }) => {
@@ -145,4 +153,3 @@ export default function Header() {
     </nav>
   )
 }
-    
