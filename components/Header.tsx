@@ -14,6 +14,11 @@ export default function Header() {
 
   useEffect(() => setMounted(true), [])
 
+  const swipeConfidenceThreshold = 10000
+  const swipePower = (offset: number, velocity: number) => {
+    return Math.abs(offset) * velocity
+  }
+
   const toggleMenu = () => setIsOpen(!isOpen)
 
   const menuItems = [
@@ -97,11 +102,19 @@ export default function Header() {
         <div className="lg:hidden fixed inset-0 z-50">
           <div className="fixed inset-0 bg-gray-800 bg-opacity-50 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
           <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "spring", damping: 20 }}
-            className="fixed inset-y-0 right-0 max-w-xs w-full bg-white dark:bg-gray-900 shadow-xl overflow-y-auto"
+            initial={{ x: "100%", width: "100%" }}
+            animate={{ x: 0, width: "80%" }}
+            exit={{ x: "100%", width: "100%" }}
+            transition={{ type: "spring", bounce: 0, duration: 0.4 }}
+            className="fixed inset-y-0 right-0 max-w-xs w-full bg-white dark:bg-gray-900 shadow-xl overflow-y-auto flex flex-col"
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            onDragEnd={(e, { offset, velocity }) => {
+              const swipe = swipePower(offset.x, velocity.x)
+              if (swipe > swipeConfidenceThreshold) {
+                setIsOpen(false)
+              }
+            }}
           >
             <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
               <h2 className="text-xl font-semibold text-gray-800 dark:text-white">Menu</h2>
@@ -132,3 +145,4 @@ export default function Header() {
     </nav>
   )
 }
+    
